@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+  compileSdkVersion 22
+  buildToolsVersion "22.0.1"
+
+  defaultConfig {
+    applicationId "com.aranea_apps.android.samples.mvp"
+    minSdkVersion 14
+    targetSdkVersion 22
+    versionCode 1
+    versionName "1.0.0"
+
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+
+  testOptions {
+    unitTests.returnDefaultValues = true
+  }
+
+  packagingOptions {
+    exclude 'LICENSE.txt'
+  }
+
+  buildTypes {
+
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  compile 'com.android.support:appcompat-v7:22.1.1'
+  compile 'com.android.support:support-v4:22.1.1'
+  // App's dependencies, including test
+  compile 'com.android.support:support-annotations:22.1.1'
+  compile 'com.google.dagger:dagger:2.0'
+  testCompile 'junit:junit:4.12'
+  testCompile 'org.mockito:mockito-core:1.10.19'
+  androidTestCompile 'com.android.support.test.espresso:espresso-core:2.1'
+  androidTestCompile 'com.android.support.test:rules:0.2'
+  androidTestCompile 'com.android.support.test:runner:0.2'
+  androidTestCompile ('com.android.support.test.espresso:espresso-contrib:2.0') {
+    exclude group: 'com.android.support', module: 'appcompat'
+    exclude group: 'com.android.support', module: 'support-v4'
+    exclude module: 'recyclerview-v7'
+  }
+}
