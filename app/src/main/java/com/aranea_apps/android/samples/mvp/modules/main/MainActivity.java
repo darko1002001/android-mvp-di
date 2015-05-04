@@ -1,14 +1,14 @@
 package com.aranea_apps.android.samples.mvp.modules.main;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.aranea_apps.android.samples.mvp.R;
+import com.aranea_apps.android.samples.mvp.base.activity.BaseActivity;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends BaseActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
