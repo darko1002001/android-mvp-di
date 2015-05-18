@@ -35,7 +35,8 @@ public class LoginPresenterTest {
   public void setUp() {
     loginView = mock(LoginView.class);
     loginInteractor = mock(LoginInteractor.class);
-    presenter = new LoginPresenter(loginView, loginInteractor);
+    presenter = new LoginPresenter(loginInteractor);
+    presenter.setLoginView(loginView);
   }
 
   @After
